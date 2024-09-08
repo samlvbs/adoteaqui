@@ -1,0 +1,33 @@
+.container-home{
+  height: 100%;
+}
+.banner{
+  background-color: rgb(209, 209, 209);
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.img-banner{
+  border-radius: 10px;
+  height: 100%;
+  width: 90%;
+   img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+   }
+}
+@media(max-width: 600px){
+  .banner{
+    height: 200px;
+  }
+  .img-banner{
+    width: 100%;
+  }
+}
+.searcher{
+  height: 100%;
+  background-color: blue;
+  margin-top: -25px;
+}
