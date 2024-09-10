@@ -1,9 +1,28 @@
-
+<div class="container-home">
   <section class="banner">
     <div class="img-banner">
       <img src="assets/banner-pets.png" alt="banner pets">
     </div>
   </section>
-  <section class="searcher">Buscas aqui</section>
+  <section class="searcher">
+    <h2>Encontre o seu pet</h2>
+    <form [formGroup]="findForm" (ngSubmit)="handleSubmit()">
+      <div>
+        <label for="tipo">Tipo</label>
+        <select formControlName="tipo">
+          <option value="Cachorros">Cachorros</option>
+          <option value="Gatos">Gatos</option>
+        </select>
+      </div>
+      <div>
+        <label for="local"> Local</label>
+        <input type="text" formControlName="local">
+      </div>
+      <div>
+        <app-button name="Encontrar"></app-button>
+      </div>
+    </form>
+  </section>
+</div>
 
 
