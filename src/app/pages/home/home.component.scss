@@ -38,6 +38,7 @@
   flex-direction: column;
 
   form{
+    width: 50vh;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.19);
     border-radius: 15px;
@@ -61,5 +62,13 @@
   .flex-container{
     display: flex;
     gap: 5px;
+  }
+
+  mat-select{
+    width: 70%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(179, 179, 179);
+  //  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
   }
 }

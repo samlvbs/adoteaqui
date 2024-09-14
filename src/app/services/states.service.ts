@@ -5,17 +5,22 @@ import { map } from "rxjs";
 @Injectable({
     providedIn: 'root',
 })
-    
+
 export class StatesService {
     constructor(
-        private readonly _httpClient: HttpClient,
+        private _httpClient: HttpClient
     ) {}
 
     getStates() {
-        return this._httpClient.get<any>('https://countriesnow.space/api/v0.1/countries/positions').pipe(
-            map((statesResponse =>{
-                return statesResponse.data;
-            }))
-        );
+        return this._httpClient.post<any>(
+          'https://countriesnow.space/api/v0.1/countries/states',
+          {
+            country: 'brazil'
+          }
+        ).pipe(
+          map((statesResponse =>{
+            return statesResponse.data.states
+          }))
+        )
     }
 }

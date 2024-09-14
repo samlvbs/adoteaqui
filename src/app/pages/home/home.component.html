@@ -8,21 +8,22 @@
     <h2>Encontre o seu pet</h2>
     <form [formGroup]="findForm" (ngSubmit)="handleSubmit()">
       <label for="tipo">Tipo</label>
-      <div class="flex-container"> 
-        <app-toggle tipo ="Caes"></app-toggle>
+      <div class="flex-container">
+        <app-toggle tipo ="Cães"></app-toggle>
         <app-toggle tipo ="Gatos"></app-toggle>
       </div>
-      <div>
-        <label for="local"> Local</label>
-        <input type="text" formControlName="local">
-      </div>
+        <label for="local"> Estado</label>
+        <mat-select>
+          <mat-option *ngFor="let state of states" [value]="state.name">{{state.name}}</mat-option>
+        </mat-select>
+        <label for="local"> Cidade</label>
+        <mat-select>
+          <mat-option *ngFor="let citie of cities" [value]="citie">{{citie}}</mat-option>
+        </mat-select>
       <div>
         <app-button name="Encontrar"></app-button>
       </div>
-      <div>
-        
-      </div>
-    </form>  
+    </form>
   </section>
 </div>
 

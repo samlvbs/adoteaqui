@@ -3,27 +3,39 @@ import { NavComponent } from '../../shared/nav/nav.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ButtonComponent } from '../../shared/button/button.component';
-import { ToggleComponent } from '../../shared/toggle/toggle.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ToggleComponent } from '../../shared/components/toggle/toggle.component';
 import { StatesService } from '../../services/states.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSelect, MatOption } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
+import { CitiesService } from '../../services/cities.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavComponent, FooterComponent, ToggleComponent, ReactiveFormsModule, ButtonComponent],
+  imports: [NavComponent, FooterComponent, ToggleComponent, MatSelect, MatOption, ReactiveFormsModule, ButtonComponent, HttpClientModule, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  providers: [StatesService]
 })
 export class HomeComponent implements OnInit {
-    private readonly _statesService = inject(StatesService);
-
-    constructor(){
-      
-    }
+  states: any[] = [];
+  cities: any[] = [];
+  constructor(
+    private _statesService: StatesService,
+    private _citiesService: CitiesService
+  ){}
 
   ngOnInit(){
       this._statesService.getStates().subscribe((statesResponse) =>{
-        console.log('Paises: ', statesResponse)
+        this.states = statesResponse;
+        console.log('Estados:  ', statesResponse);
+      })
+
+      this._citiesService.getCities('São paulo').subscribe((citiesResponse) =>{
+        this.cities = citiesResponse;
+        console.log('Cidades: ', citiesResponse)
       })
   }
 

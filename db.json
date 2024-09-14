@@ -1,0 +1,76 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "tipo": "cachorro",
+      "nome": "toto",
+      "dataNasc": "10/02/2020",
+      "peso": 12,
+      "altura": 0.5,
+      "cidade": "barueri",
+      "raca": "indefinida",
+      "foto": "http://localhost:3001/images/toto.jpg",
+      "status": "disponivel"
+    },
+    {
+      "id": 2,
+      "tipo": "gato",
+      "nome": "mimi",
+      "dataNasc": "05/06/2021",
+      "peso": 4,
+      "altura": 0.3,
+      "cidade": "osasco",
+      "raca": "siames",
+      "foto": "http://localhost:3001/images/mimi.jpg",
+      "status": "disponivel"
+    },
+    {
+      "id": 3,
+      "tipo": "cachorro",
+      "nome": "rex",
+      "dataNasc": "20/09/2019",
+      "peso": 15,
+      "altura": 0.6,
+      "cidade": "sao paulo",
+      "raca": "pastor alemão",
+      "foto": "http://localhost:3001/images/rex.jpg",
+      "status": "adotado"
+    },
+    {
+      "id": 4,
+      "tipo": "gato",
+      "nome": "felix",
+      "dataNasc": "12/12/2022",
+      "peso": 3,
+      "altura": 0.25,
+      "cidade": "carapicuiba",
+      "raca": "persa",
+      "foto": "http://localhost:3001/images/felix.jpg",
+      "status": "disponivel"
+    },
+    {
+      "id": 5,
+      "tipo": "cachorro",
+      "nome": "bella",
+      "dataNasc": "14/07/2018",
+      "peso": 10,
+      "altura": 0.45,
+      "cidade": "santana de parnaíba",
+      "raca": "beagle",
+      "foto": "http://localhost:3001/images/bella.jpg",
+      "status": "disponivel"
+    },
+    {
+      "id": 6,
+      "tipo": "gato",
+      "nome": "neve",
+      "dataNasc": "01/03/2023",
+      "peso": 2,
+      "altura": 0.22,
+      "cidade": "barueri",
+      "raca": "ragdoll",
+      "foto": "http://localhost:3001/images/neve.jpg",
+      "status": "disponivel"
+    }
+  ]
+}
