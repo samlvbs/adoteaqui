@@ -7,12 +7,10 @@
   <section class="searcher">
     <h2>Encontre o seu pet</h2>
     <form [formGroup]="findForm" (ngSubmit)="handleSubmit()">
-      <div>
-        <label for="tipo">Tipo</label>
-        <select formControlName="tipo">
-          <option value="Cachorros">Cachorros</option>
-          <option value="Gatos">Gatos</option>
-        </select>
+      <label for="tipo">Tipo</label>
+      <div class="flex-container"> 
+        <app-toggle tipo ="Caes"></app-toggle>
+        <app-toggle tipo ="Gatos"></app-toggle>
       </div>
       <div>
         <label for="local"> Local</label>
@@ -21,7 +19,10 @@
       <div>
         <app-button name="Encontrar"></app-button>
       </div>
-    </form>
+      <div>
+        
+      </div>
+    </form>  
   </section>
 </div>
 
