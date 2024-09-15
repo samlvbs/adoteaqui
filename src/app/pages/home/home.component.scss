@@ -1,8 +1,11 @@
+@import '../../../colors';
+
 .container-home{
   height: 100%;
 }
 .banner{
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(214, 187, 165);
+  background-image: linear-gradient(to bottom, $primary-color 0%, $background-color 70%);
   height: 300px;
   padding: 10px;
   display: flex;
@@ -10,8 +13,8 @@
 }
 .img-banner{
   border-radius: 10px;
-  height: 100%;
-  width: 90%;
+  height: 80%;
+  width: 80%;
    img{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
     border-radius: 10px;
@@ -29,7 +32,7 @@
 }
 .searcher{
   flex: 1;
-  background-color: white;
+  background-color: $background-color;
   margin-top: -25px;
   padding: 25px;
   margin-bottom: 20px;
@@ -70,5 +73,8 @@
     border-radius: 5px;
     border: 1px solid rgb(179, 179, 179);
   //  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  mat-slide-toggle{
+    padding: 2px;
   }
 }

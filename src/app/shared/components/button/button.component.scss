@@ -1,7 +1,9 @@
+@import '../../../../colors';
 .btn{
   padding: 10px;
   color: white;
-  background-color: rgb(75, 75, 75);
+  background-color: $primary-color;
   border-radius: 5px;
   font-weight: 600;
+  border: none;
 }
