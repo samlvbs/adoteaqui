@@ -57,9 +57,9 @@ export class HomeComponent implements OnInit {
 
   handleSubmit(){
     alert('Estado : ' + this.findForm.value.stateSelect +
-          ' Cidade : '+ this.findForm.value.citieSelect +
-          ' Caes? :'+ this.findForm.value.enableDog +
-          ' Gatos? :'+ this.findForm.value.enableCat
+          '\n Cidade : '+ this.findForm.value.citieSelect +
+          '\n Caes? : '+ this.findForm.value.enableDog +
+          '\n Gatos? : '+ this.findForm.value.enableCat
         )
   }
 }

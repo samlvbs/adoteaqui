@@ -8,7 +8,7 @@
     <h2>Encontre o seu pet</h2>
     <form [formGroup]="findForm" (ngSubmit)="handleSubmit()">
       <label for="tipo">Tipo</label>
-      <div class="flex-container">
+      <div>
         <mat-slide-toggle formControlName="enableDog">Cães</mat-slide-toggle>
         <mat-slide-toggle formControlName="enableCat">Gatos</mat-slide-toggle>
       </div>
