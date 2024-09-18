@@ -1,1 +1,11 @@
-<p>gatos works!</p>
+<div class="cards">
+  <app-card-pets
+  *ngFor="let cat of getCats()"
+  [linkImg]="cat.foto"
+  [altImg]="'Foto do pet ' + cat.nome"
+  [namePet]="cat.nome"
+  [infosPet]="'Raça: '+ cat.raca + ', ' + cat.peso + 'kg'"
+  [localPet]="cat.cidade">
+</app-card-pets>
+
+</div>
