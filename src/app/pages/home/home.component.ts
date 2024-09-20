@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { CitiesService } from '../../services/cities.service';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { IState } from '../../interfaces/states-response/state.interface';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +26,10 @@ export class HomeComponent implements OnInit {
   cities: any[] = [];
   selectedState: string =''
 
-  private _formBuilder = inject(FormBuilder);
+
 
   constructor(
+
     private _statesService: StatesService,
     private _citiesService: CitiesService
   ){}
