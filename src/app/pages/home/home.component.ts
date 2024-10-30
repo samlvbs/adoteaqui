@@ -5,18 +5,17 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { StatesService } from '../../services/states.service';
-import { HttpClientModule } from '@angular/common/http';
 import { MatSelect, MatOption } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { CitiesService } from '../../services/cities.service';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
-import { IState } from '../../interfaces/states-response/state.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavComponent, FooterComponent, MatSelect, MatOption, MatSlideToggle, ReactiveFormsModule, ButtonComponent, HttpClientModule, CommonModule, MatFormFieldModule],
+  imports: [NavComponent, FooterComponent, MatSelect, MatOption, MatSlideToggle, ReactiveFormsModule, ButtonComponent, CommonModule, MatFormFieldModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   providers: [StatesService]
@@ -24,44 +23,52 @@ import { IState } from '../../interfaces/states-response/state.interface';
 export class HomeComponent implements OnInit {
   states: any[] = [];
   cities: any[] = [];
-  selectedState: string =''
+  selectedState: string ='São Paulo'
 
+  private readonly _statesService = inject(StatesService);
+  private readonly _citiesService = inject(CitiesService);
+  private readonly _router = inject(Router);
 
+  findForm!: FormGroup;
 
-  constructor(
+  ngOnInit() {
+    // Inicializando o FormGroup com o valor padrão "São Paulo" para stateSelect
+    this.findForm = new FormGroup({
+      citieSelect: new FormControl(''),
+      stateSelect: new FormControl(this.selectedState), // Valor padrão
+      enableDog: new FormControl(false),
+      enableCat: new FormControl(false)
+    });
 
-    private _statesService: StatesService,
-    private _citiesService: CitiesService
-  ){}
-
-  ngOnInit(){
-    this._statesService.getStates().subscribe((statesResponse) =>{
+    // Carregando os estados e garantindo o valor padrão após a resposta
+    this._statesService.getStates().subscribe((statesResponse) => {
       this.states = statesResponse;
-      console.log('Estados:  ', statesResponse);
-    })
+      console.log('Estados: ', statesResponse);
+
+      // Se o valor do stateSelect ainda não estiver definido, atribuímos "São Paulo"
+      if (this.selectedState) {
+        this.onStateSelected(this.selectedState);
+      }
+    });
   }
 
-  onStateSelected(state: string){
+  onStateSelected(state: string) {
     this.selectedState = state;
-
-    this._citiesService.getCities(state).subscribe((citiesResponse) =>{
+    this._citiesService.getCities(state).subscribe((citiesResponse) => {
       this.cities = citiesResponse;
-      console.log('Cidades: ', citiesResponse)
-    })
+      console.log('Cidades: ', citiesResponse);
+    });
   }
-  findForm = new FormGroup({
-    citieSelect: new FormControl(''),
-    stateSelect: new FormControl(''),
-    enableDog: new FormControl(false),
-    enableCat: new FormControl(false)
-  })
 
-
-  handleSubmit(){
-    alert('Estado : ' + this.findForm.value.stateSelect +
-          '\n Cidade : '+ this.findForm.value.citieSelect +
-          '\n Caes? : '+ this.findForm.value.enableDog +
-          '\n Gatos? : '+ this.findForm.value.enableCat
-        )
+  handleSubmit() {
+    const { citieSelect: city, stateSelect: state, enableDog, enableCat } = this.findForm.value;
+    this._router.navigate(['resultados-pesquisa'], {
+      queryParams: {
+        city,
+        state,
+        isEnableCat: enableCat ? 'true' : 'false',
+        isEnableDog: enableDog ? 'true' : 'false'
+      }
+    });
   }
 }

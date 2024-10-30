@@ -5,8 +5,13 @@
   width: 220px;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
+  @media (max-width: 400px){
+    height: 200px;
+    width: 150px;
+    font-size: smaller;
+  }
 }
 .pic{
   height: 70%;
@@ -32,3 +37,11 @@ img{
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+:hover{
+  .name{
+    background-color: green;
+    color: white;
+    font-size: large;
+  }
+}
+

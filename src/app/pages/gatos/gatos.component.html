@@ -1,11 +1,13 @@
 <div class="cards">
-  <app-card-pets
-  *ngFor="let cat of getCats()"
-  [linkImg]="cat.foto"
-  [altImg]="'Foto do pet ' + cat.nome"
-  [namePet]="cat.nome"
-  [infosPet]="'Raça: '+ cat.raca + ', ' + cat.peso + 'kg'"
-  [localPet]="cat.cidade">
-</app-card-pets>
-
+  @for (cat of catList; track cat) {
+    <div [routerLink]="['/pet', cat.id]">
+      <app-card-pets
+        [linkImg]="cat.foto"
+        [altImg]="'Foto do pet ' + cat.nome"
+        [namePet]="cat.nome"
+        [infosPet]="'Raça: '+ cat.raca + ', ' + cat.peso + 'kg'"
+        [localPet]="cat.cidade">
+      </app-card-pets>
+    </div>
+  }
 </div>

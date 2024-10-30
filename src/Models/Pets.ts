@@ -1,11 +1,13 @@
 export interface Pets{
-  id: number;
+  id: string;
+  sexo: string;
   tipo: string,
   nome: string,
-  dataNasc?: string,
+  idade?: number,
   peso: number,
   altura: number,
   cidade: string,
+  estado: string,
   raca: string,
   foto: string,
   status?: string

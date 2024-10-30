@@ -13,7 +13,7 @@
         <mat-slide-toggle formControlName="enableCat">Gatos</mat-slide-toggle>
       </div>
       <mat-label for="estado">Estado</mat-label>
-      <mat-select required (selectionChange)="onStateSelected($event.value)" formControlName="stateSelect">
+      <mat-select (selectionChange)="onStateSelected($event.value)" formControlName="stateSelect">
         <mat-option  *ngFor="let state of states" [value]="state.name" >{{state.name}}</mat-option>
       </mat-select>
       <label for="cidade">Cidade</label>

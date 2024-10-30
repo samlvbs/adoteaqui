@@ -1,0 +1,15 @@
+<div class="cards">
+  @for (pet of petList; track pet) {
+    <div [routerLink]="['/pet', pet.id]">
+      <app-card-pets
+        [linkImg]="pet.foto"
+        [altImg]="'Foto do pet ' + pet.nome"
+        [namePet]="pet.nome"
+        [infosPet]="'Raça: '+ pet.raca + ', ' + pet.peso + 'kg'"
+        [localPet]="pet.cidade">
+      </app-card-pets>
+    </div>
+  }
+</div>
+
+

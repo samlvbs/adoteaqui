@@ -1,0 +1,33 @@
+@if (pet) {
+  @if(pet.sexo === "Macho"){
+    <h2 style="text-align: center; padding: 10px;">Olá, eu sou o {{pet.nome}}, me adote ❤️</h2>
+  }
+  @if(pet.sexo === "Femêa"){
+    <h2 style="text-align: center; padding: 10px;">Olá, eu sou a {{pet.nome}}, me adote ❤️</h2>
+  }
+  <button mat-flat-button>
+    ❤️Adote {{pet.nome}}
+  </button>
+  <div class="container-profile">
+    <picture class="profile">
+      <img class="picture" [src]="pet.foto" [alt]="pet.nome">
+      <p>{{pet.nome}} </p>
+    </picture>
+    <aside class="informations">
+      <h3>Informações do pet</h3>
+      <p>Nome: {{pet.nome}}</p>
+      <p>Raça: {{pet.raca}}</p>
+      <p>Idade: {{pet.idade}} anos</p>
+      <p>Sexo: {{pet.sexo}}</p>
+      <p>Peso: {{pet.peso}}kg</p>
+      <p>Altura: {{pet.altura}}</p>
+      <p>Localização: {{pet.cidade}}, {{pet.estado}}</p>
+      <p></p>
+    </aside>
+  </div>
+
+
+
+
+
+}
