@@ -1,0 +1,105 @@
+nav {
+  background-color: #97a5b3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  img{
+    height: 90px;
+    width: 80px;
+  }
+  a{
+    padding: 2px;
+    text-decoration: none;
+    color: white;
+  }
+}
+.right-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #97a5b3;
+
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; // Esconde o botão de alternância em telas maiores
+
+    &:focus {
+      outline: none;
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: background 0.10s;
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .toggle-btn {
+      display: block; // Mostra o botão de alternância
+    }
+
+    ul {
+      display: none; // Oculta o menu inicialmente
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      position: absolute;
+      top: 50px;
+      left: 0;
+
+      &.open {
+        display: flex; // Exibe o menu quando a classe .open está ativa
+      }
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          text-align: center;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+.login-button{
+  padding: 5px;
+  a{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+}
+mat-icon{
+  color: white;
+}
+.item-selected{
+  background-color: #555;
+  height: 100%;
+  border-radius: 5px ;
+  padding: 10px;
+}
+

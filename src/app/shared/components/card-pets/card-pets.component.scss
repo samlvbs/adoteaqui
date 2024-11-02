@@ -3,8 +3,7 @@
   flex-direction: column;
   height: 250px;
   width: 220px;
-  border: 1px solid black;
-  border-radius: 15px;
+  border-radius: 5px;
   margin: 10px;
   cursor: pointer;
   @media (max-width: 400px){
@@ -16,26 +15,27 @@
 .pic{
   height: 70%;
   background-color: black;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .name{
   height: 10%;
-  background-color: gray;
+  background-color: rgb(79, 123, 134);
+  color: white;
   text-align: center;
 }
 .infos{
   height: 20%;
   text-align: center;
   background-color: azure;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 img{
   height: 100%;
   width: 100%;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 :hover{
   .name{

@@ -1,15 +1,26 @@
-<div class="cards">
-  @for (pet of petList; track pet) {
-    <div [routerLink]="['/pet', pet.id]">
-      <app-card-pets
-        [linkImg]="pet.foto"
-        [altImg]="'Foto do pet ' + pet.nome"
-        [namePet]="pet.nome"
-        [infosPet]="'Raça: '+ pet.raca + ', ' + pet.peso + 'kg'"
-        [localPet]="pet.cidade">
-      </app-card-pets>
-    </div>
-  }
-</div>
+@if(getPets().length >= 1 && dogs || cats){
+  <div class="cards">
+    @for (pet of petList; track pet) {
+      <div [routerLink]="['/pet', pet.id]">
+        <app-card-pets
+          [linkImg]="pet.foto"
+          [altImg]="'Foto do pet ' + pet.nome"
+          [namePet]="pet.nome"
+          [infosPet]="'Raça: '+ pet.raca + ', ' + pet.peso + 'kg'"
+          [localPet]="pet.cidade">
+        </app-card-pets>
+      </div>
+    }
+  </div>
+
+} @else {
+  <div style="text-align: center; padding: 10px;">
+    <h3 >Infelizmente ainda não há um pet que se encaixe na sua busca</h3>
+    <h4>Tente novamente</h4>
+    <button mat-flat-button [routerLink]="['/home']">Voltar</button>
+  </div>
+
+}
+
 
 

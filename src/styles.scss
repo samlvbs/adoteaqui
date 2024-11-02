@@ -65,22 +65,6 @@ header {
   color: white;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  img{
-    height: 90px;
-    width: 80px;
-  }
-
-  a{
-    text-decoration: none;
-    color: white;
-  }
-}
-
 main {
   flex: 1;
   background-color: $background-color;

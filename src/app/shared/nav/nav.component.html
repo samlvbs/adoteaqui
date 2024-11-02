@@ -1,17 +1,35 @@
 <nav>
-  <div class="right-nav">
+  <div class="left-nav">
    <a routerLink="/home"><img src="assets/logo-pets.png" alt="logo-pets"></a>
   </div>
-  <div class="left-nav">
-    <p>
-      <a routerLink="/caes">Cães</a>
+  <div class="right-nav">
+      <!-- <a routerLink="/caes">Cães</a>
       |
       <a routerLink="/gatos">Gatos</a>
       |
       <a routerLink="/eventos">Eventos</a>
       |
       <a routerLink="/ongs">Ongs</a>
-    </p>
+      |
+      <div class="login-button">
+        <a routerLink="/ongs">
+            <mat-icon>account_circle login</mat-icon>
+            <span>login</span>
+        </a>
+      </div> -->
+      <button class="toggle-btn" (click)="isMenuOpen = !isMenuOpen">☰</button>
+      <ul [class.open]="isMenuOpen">
+        <li><a routerLink="/caes" routerLinkActive="item-selected">Cães</a></li>
+        <li><a routerLink="/gatos" routerLinkActive="item-selected">Gatos</a></li>
+        <li><a routerLink="/eventos" routerLinkActive="item-selected">Eventos</a></li>
+        <li><a routerLink="/ongs" routerLinkActive="item-selected">Ongs</a></li>
+        <li>
+          <a routerLink="/login" routerLinkActive="item-selected">
+              <mat-icon>account_circle login</mat-icon>
+              <span>Login</span>
+          </a>
+      </li>
+      </ul>
   </div>
 </nav>
 

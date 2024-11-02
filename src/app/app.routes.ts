@@ -6,8 +6,14 @@ import { OngsComponent } from './pages/ongs/ongs.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { ResultadosPesquisaComponent } from './pages/resultados-pesquisa/resultados-pesquisa.component';
 import { PerfilPetComponent } from './pages/perfil-pet/perfil-pet.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -37,5 +43,9 @@ export const routes: Routes = [
     title: 'Perfil do pet',
     component: PerfilPetComponent,
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 
 ];

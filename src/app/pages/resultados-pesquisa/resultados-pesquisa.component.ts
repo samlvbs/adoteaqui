@@ -3,6 +3,9 @@ import { CardPetsComponent } from "../../shared/components/card-pets/card-pets.c
 import * as db from '../../../assets/db.json';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Pets } from '../../../Models/Pets';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -11,7 +14,7 @@ import { Pets } from '../../../Models/Pets';
   templateUrl: './resultados-pesquisa.component.html',
   styleUrls: ['./resultados-pesquisa.component.scss'],
   standalone: true,
-  imports: [CardPetsComponent, RouterLink]
+  imports: [CardPetsComponent, RouterLink, MatButtonModule, MatDividerModule, MatIconModule]
 })
 export class ResultadosPesquisaComponent implements OnInit {
   city: string ='';
